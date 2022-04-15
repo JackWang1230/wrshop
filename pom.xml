@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>framework-learn</module>
+        <module>common-api-learn</module>
+        <module>seller-api-learn</module>
+        <module>manager-api-learn</module>
+        <module>amdin-learn</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.10</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>cn.wr</groupId>
+    <artifactId>wrshop</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>wrshop</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <revision>1.0.0</revision>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <skipTests>true</skipTests>
+        <docker-registry>registry.cn-beijing.aliyuncs.com/lili-images</docker-registry>
+        <images-version>1</images-version>
+        <alipay-sdk-version>4.22.32.ALL</alipay-sdk-version>
+        <mybatis-plus-version>3.5.1</mybatis-plus-version>
+        <Hutool-version>5.7.20</Hutool-version>
+        <TinyPinyin-verions>2.0.3.RELEASE</TinyPinyin-verions>
+        <jasypt-version>3.0.4</jasypt-version>
+        <neetl-version>2.9.10</neetl-version>
+        <lombok-version>1.18.22</lombok-version>
+        <redisson>3.15.6</redisson>
+        <aliyun-version>4.5.18</aliyun-version>
+        <aliyun-sdk-oss-version>3.11.1</aliyun-sdk-oss-version>
+        <aliyun-sdk-dysms-version>2.0.8</aliyun-sdk-dysms-version>
+        <aliyun-version>4.6.0</aliyun-version>
+        <aliyun-sdk-oss-version>3.14.0</aliyun-sdk-oss-version>
+        <aliyun-sdk-dysms-version>2.0.9</aliyun-sdk-dysms-version>
+        <rocketmq-version>2.2.1</rocketmq-version>
+        <jwt-version>0.11.2</jwt-version>
+        <sharding-jdbc-version>4.0.0</sharding-jdbc-version>
+        <druid-version>1.2.8</druid-version>
+        <simple-http-version>1.0.3</simple-http-version>
+        <antlr4-version>4.7.2</antlr4-version>
+        <antlr4-runtime-version>4.7.2</antlr4-runtime-version>
+        <knife4j.version>2.0.9</knife4j.version>
+        <de.codecentric>2.6.2</de.codecentric>
+        <userAgentUtils>1.21</userAgentUtils>
+        <poi-version>5.1.0</poi-version>
+        <poi-ooxml-version>5.1.0</poi-ooxml-version>
+        <logstash-logback-encoder>7.0.1</logstash-logback-encoder>
+        <zxing>3.4.1</zxing>
+        <slf4j-api>1.7.35</slf4j-api>
+        <xk-time>3.2.3</xk-time>
+        <commons-text>1.9</commons-text>
+        <enjoy.version>4.3</enjoy.version>
+        <xxl-job>2.3.0</xxl-job>
+        <spotify>1.2.2</spotify>
+        <spring-boot-admin>2.3.1</spring-boot-admin>
+        <owasp-java-html-sanitizer>20211018.2</owasp-java-html-sanitizer>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+
+        <repository>
+            <id>huaweicloud</id>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+            <!-- <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>-->
+        </repository>
+
+
+<!--        <repository>-->
+<!--            <id>central</id>-->
+<!--            <name>aliyun maven</name>-->
+<!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--            <layout>default</layout>-->
+<!--            &lt;!&ndash; 是否开启发布版构件下载 &ndash;&gt;-->
+<!--            <releases>-->
+<!--                <enabled>true</enabled>-->
+<!--            </releases>-->
+<!--            &lt;!&ndash; 是否开启快照版构件下载 &ndash;&gt;-->
+<!--            <snapshots>-->
+<!--                <enabled>false</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+        <!--        <repository>-->
+        <!--            <id>central</id>-->
+        <!--            <name>aliyun maven</name>-->
+        <!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+        <!--&lt;!&ndash;            <layout>default</layout>&ndash;&gt;-->
+        <!--&lt;!&ndash;            &lt;!&ndash; 是否开启发布版构件下载 &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;            <releases>&ndash;&gt;-->
+        <!--&lt;!&ndash;                <enabled>true</enabled>&ndash;&gt;-->
+        <!--&lt;!&ndash;            </releases>&ndash;&gt;-->
+        <!--&lt;!&ndash;            &lt;!&ndash; 是否开启快照版构件下载 &ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;            <snapshots>&ndash;&gt;-->
+        <!--&lt;!&ndash;                <enabled>false</enabled>&ndash;&gt;-->
+        <!--&lt;!&ndash;            </snapshots>&ndash;&gt;-->
+        <!--        </repository>-->
+    </repositories>
+
+</project>
