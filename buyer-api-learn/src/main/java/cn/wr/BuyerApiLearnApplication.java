@@ -1,4 +1,4 @@
-package cn.wr.buyerapilearn;
+package cn.wr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
